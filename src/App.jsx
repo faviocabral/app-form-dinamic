@@ -10,7 +10,7 @@ export default function App() {
                             {nombre:'id', tipo:'number' , disabled: false }, 
                             {nombre:'nombre', tipo: 'text', disabled: false }, 
                             {nombre:'apellido', tipo: 'text', disabled: false},
-                            {nombre:'tarea', tipo: 'textarea', disabled: true},
+                            {nombre:'tarea', tipo: 'textarea', disabled: false},
                           ] 
     },
     {id: 2, col:2, campos: [
