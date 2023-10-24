@@ -5,7 +5,7 @@ export default function App() {
 
   //payload(objeto) que viene de la base datos 
   let forms = [     
-    {id: 1, col:2, campos: ['id', 'nombre' , 'apellido' , 'telefono' ] },
+    {id: 1, col:3, campos: ['id', 'nombre' , 'apellido' , 'telefono' ] },
     {id: 2, col:2, campos: ['id', 'nombre' , 'apellido'  ] },
     {id: 3, col:2, campos: ['id', 'nombre'   ] },
   ]
@@ -45,7 +45,7 @@ export default function App() {
   return (
     <>
       <div className="container-fluid">
-        <h1 className="text-center mt-1 text-bold bg-info rounded text-white">Formulario Dinamico CHAN</h1>
+        <h1 className="text-center mt-1 text-bold bg-info rounded text-white">Formulario Dinamico</h1>
         <div className="container-fluid mt-5 w3-border w3-padding w3-round ws-grey d-flex flex-wrap justify-content-arround">
           {
             //iteramos los formularios n... 
