@@ -1,5 +1,9 @@
 # React + Vite
 
+Example of dinamic forms:
+
+![Alt Text](https://github.com/faviocabral/app-form-dinamic/blob/master/public/example.gif)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
