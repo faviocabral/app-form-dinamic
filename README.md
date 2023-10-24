@@ -1,6 +1,6 @@
 # React + Vite
 
-Example of dinamic forms:
+Example of dinamic forms in React js:
 
 ![Alt Text](https://github.com/faviocabral/app-form-dinamic/blob/master/public/example.gif)
 
