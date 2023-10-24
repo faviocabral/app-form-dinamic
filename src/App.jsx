@@ -1,22 +1,40 @@
 import React from 'react'
 import InputText from './components/inputText'
+import TextArea from './components/TextArea'
 
 export default function App() {
 
   //payload(objeto) que viene de la base datos 
-  let forms = [     
-    {id: 1, col:3, campos: ['id', 'nombre' , 'apellido' , 'telefono' ] },
-    {id: 2, col:2, campos: ['id', 'nombre' , 'apellido'  ] },
-    {id: 3, col:2, campos: ['id', 'nombre'   ] },
+  let forms2 = [ 
+    {id: 1, col:3, campos: [
+                            {nombre:'id', tipo:'number' , disabled: false }, 
+                            {nombre:'nombre', tipo: 'text', disabled: false }, 
+                            {nombre:'apellido', tipo: 'text', disabled: false},
+                            {nombre:'tarea', tipo: 'textarea', disabled: true},
+                          ] 
+    },
+    {id: 2, col:2, campos: [
+                              {nombre:'id', tipo:'number' , disabled: false }, 
+                              {nombre:'nombre', tipo: 'text', disabled: false }, 
+                              {nombre:'apellido', tipo: 'text', disabled: true},
+                            ] 
+    },
+    {id: 3, col:1, campos: [
+                            {nombre:'id', tipo:'number' , disabled: true }, 
+                            {nombre:'tarea', tipo: 'textarea', disabled: false},
+                          ] 
+    },
   ]
+
   //distribuimos en cuantas columnas vamos a mostrar en el formulario
-  forms = forms.map(item=>{
+  forms2 = forms2.map(item=>{
     return {
       ...item,
       distribucion: distribuir(item.col, item.campos) //agregamos un nuevo elemento al objeto 
       //con esto lo que vamos hacer es distribuir los campos segun las cantidad de columnas queremo mostrar 
     }
   })
+  console.log(forms2)
 
   //funcion de distribucion de columnas 
   function distribuir(col, campos ){
@@ -49,9 +67,9 @@ export default function App() {
         <div className="container-fluid mt-5 w3-border w3-padding w3-round ws-grey d-flex flex-wrap justify-content-arround">
           {
             //iteramos los formularios n... 
-            forms.map(item=>{
+            forms2.map(item=>{
               return(
-                <div className="card m-2">
+                <div className="card m-1">
                   <div className="card-header text-bold">Formulario 00{item.id}</div>
                   <div className="body">
                     <form className="p-4" key={item.id}  onSubmit={handleSubmit}>
@@ -61,18 +79,20 @@ export default function App() {
                           item.distribucion.map(fila=>{
                             return (
                               <div className="row">
-
                                 {
                                   //iteramos los campos segun formato de columnas ... 
                                   fila.map(campo=>{
                                     return (
                                       <div className="col">
-                                        <InputText key={campo} placeholder={campo} name={campo}/>
+                                        {
+                                          (campo.tipo === 'textarea')?
+                                            <TextArea name={campo.nombre} placeholder={campo.nombre} estado={campo.disabled} />
+                                          : <InputText tipo={campo.tipo} key={campo.nombre} placeholder={campo.nombre} name={campo.nombre} estado={campo.disabled} />
+                                        }
                                       </div>
                                     )
                                   })
                                 }
-
                               </div>
                             )
                           })
