@@ -1,3 +1,18 @@
 .text-bold {
   font-weight: bold;
 }
+
+.nav-tabs > li > a.active,
+.nav-tabs > li > a.active:hover,
+.nav-tabs > li > a.active:focus {
+  background-color: aliceblue
+}
+.tab-content{
+  background: aliceblue; 
+  position: relative; 
+  padding:10px; 
+  border-left:1px solid #ddd; 
+  border-right:1px solid #ddd; 
+  border-bottom:1px solid #ddd;
+  min-height: 350px;
+}
