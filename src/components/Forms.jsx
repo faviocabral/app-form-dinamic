@@ -20,7 +20,7 @@ export default function Forms(props) {
     props.form.filter(item=> item.id === props.id).map((item,x)=>{
       return(
         <div className="card m-1" key={x}>
-          <div className="card-header text-bold">Formulario 00{item.id}</div>
+          <div className="card-header text-bold">Form 00{item.id}</div>
           <div className="body">
             <form className="p-4" onSubmit={handleSubmit}>
               <div className="content">
